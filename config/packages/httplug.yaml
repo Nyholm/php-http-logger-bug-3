@@ -1,0 +1,14 @@
+httplug:
+  plugins:
+    logger: ~
+  clients:
+    default:
+      factory: 'httplug.factory.guzzle6'
+      plugins: ['httplug.plugin.logger']
+    docker:
+      factory: 'httplug.factory.docker'
+      plugins: ['httplug.plugin.logger']
+  profiling:
+    captured_body_length: 1000
+
+
