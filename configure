@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+cp .env.dist .env
+
+sed -i .env -e "s/{unix_username}/$(id -un)/"
+sed -i .env -e "s/{unix_group}/$(id -gn)/"
+sed -i .env -e "s/{unix_uid}/$(id -u)/"
+sed -i .env -e "s/{unix_gid}/$(id -g)/"
