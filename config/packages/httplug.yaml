@@ -7,7 +7,11 @@ httplug:
       plugins: ['httplug.plugin.logger']
     docker:
       factory: 'httplug.factory.docker'
-      plugins: ['httplug.plugin.logger']
+      plugins:
+        - 'httplug.plugin.logger'
+        - add_host:
+            host: http://localhost
+
   profiling:
     captured_body_length: 1000
 
