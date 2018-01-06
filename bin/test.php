@@ -45,6 +45,3 @@ $containerManager->remove($containerId);
 while (true) {
     sleep(1);
 };
-while (true) {
-sleep(1);
-};
