@@ -12,8 +12,6 @@ services:
       - data
     depends_on:
       - docker
-    env_file:
-      - .env
     environment:
       - DOCKER_HOST=tcp://docker:2375
 

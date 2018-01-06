@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 set -e
 
-setup
-
 # Wait for composer vendor
 if [ ! -f vendor/autoload.php ]; then
     echo "Run 'composer install' command to continue."
