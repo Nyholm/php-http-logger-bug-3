@@ -1,0 +1,17 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  AppBundle\:
+    resource: '../../src/AppBundle/*'
+
+  httplug.factory.docker:
+    class: AppBundle\Httplug\ClientFactory\CallableClientFactory
+    arguments:
+      $factory: [ Docker\DockerClient, 'createFromEnv' ]
+  Docker\Docker:
+    public: true
+    arguments:
+      $httpClient: '@httplug.client.docker'

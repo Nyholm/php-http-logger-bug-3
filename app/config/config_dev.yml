@@ -1,0 +1,7 @@
+imports:
+  - { resource: config.yml }
+
+# This configuration seems to be the cause of the error.
+# Comment it on test again, it will work correctly.
+framework:
+  profiler: { only_exceptions: false }

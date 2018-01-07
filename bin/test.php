@@ -9,10 +9,9 @@ set_time_limit(0);
 require_once __DIR__.'/../vendor/autoload.php';
 
 Debug::enable();
-$kernel = new \App\Kernel('dev', true);
+$kernel = new AppKernel('dev', true);
 $kernel->boot();
 
-/** @var Docker $docker */
 $docker = $kernel->getContainer()->get(Docker::class);
 
 $containerManager = $docker->getContainerManager();

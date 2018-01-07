@@ -1,0 +1,27 @@
+imports:
+  - { resource: parameters.yml }
+  - { resource: services.yml }
+
+framework:
+  secret: '%secret%'
+
+twig:
+  debug: '%kernel.debug%'
+  strict_variables: '%kernel.debug%'
+  form_themes:
+    - 'form_generic_fields.html.twig'
+
+httplug:
+  plugins:
+    logger: ~
+  clients:
+    default:
+      factory: 'httplug.factory.guzzle6'
+      plugins: ['httplug.plugin.logger']
+    docker:
+      factory: 'httplug.factory.docker'
+      # We can't keep this plugin activated all the time.
+      # @see https://github.com/php-http/logger-plugin/issues/3
+      plugins: ['httplug.plugin.logger']
+  profiling:
+    captured_body_length: 1000
